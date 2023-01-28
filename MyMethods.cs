@@ -1,5 +1,10 @@
 public class MyMethods
 {
+    /// <summary>
+    /// Метод ввода элементов одномерного массива типа String с консоли.
+    /// </summary>
+    /// <param name="quntiElements">Количество элементов в массиве.</param>
+    /// <returns>Заполненный массив типа String.</returns>
     public static string[] InputStringArray(int quntiElements)
     {
         string[] dataArray = new string[quntiElements];
@@ -11,6 +16,10 @@ public class MyMethods
         }
         return dataArray;
     }
+    /// <summary>
+    /// Метод вывода элементов одномерного массива типа String в консоль.
+    /// </summary>
+    /// <param name="dataArray">Массив типа String.</param>
     public static void OutputStringArray(string[] dataArray)
     {
         int lengthArray = dataArray.Length;
@@ -22,6 +31,11 @@ public class MyMethods
         }
         Console.Write($"{text} ]\n");
     }
+    /// <summary>
+    /// Метод формирования одномерного массива типа String, длина элементов которого меньше либо равны 3.
+    /// </summary>
+    /// <param name="dataArray">Исходный массив типа String.</param>
+    /// <returns>Итоговый массив типа String.</returns>
     public static string[] ReformArray(string[] dataArray)
     {
         int lengthArray = dataArray.Length;
@@ -40,5 +54,18 @@ public class MyMethods
         if (count < lengthArray)
             Array.Resize(ref finalArray, count);
         return finalArray;
+    }
+    /// <summary>
+    /// Метод ввода числа в консоль.
+    /// </summary>
+    /// <returns>Число.</returns>
+    public static int InputNumber()
+    {
+        int result;
+        while (!int.TryParse(Console.ReadLine(), out result))
+        {
+            Console.Write("Ошибка! Введите число повторно: ");
+        }
+        return result;
     }
 }
